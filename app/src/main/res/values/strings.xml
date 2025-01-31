@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppListaCurso</string>
+    <string name="text_titulo">Aplicativo Lista Vip devandroid.brandl.applistacurso.model.Curso Android</string>
+    <string name="text_hintprinome">Primeiro Nome</string>
+    <string name="text_hint_curdesejado">Nome do devandroid.brandl.applistacurso.model.Curso Desejado</string>
+    <string name="text_hint_telcontact">Telefone de Contato</string>
+    <string name="text_hint_sobrenome">Sobrenome</string>
+    <string name="text_limpar">LIMPAR</string>
+    <string name="text_salvar">Salvar</string>
+    <string name="text_finalizar">FINALIZAR</string>
+</resources>
