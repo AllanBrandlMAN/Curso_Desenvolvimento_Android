@@ -9,11 +9,22 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.brandl.applistacurso.R;
+import devandroid.brandl.applistacurso.model.Brinquedo;
+import devandroid.brandl.applistacurso.model.Cidade;
 import devandroid.brandl.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa ;
+    Pessoa outraPessoa;
+    Cidade cidade;
+    Cidade novaCidade;
+    Brinquedo brinquedo;
+    Brinquedo novoBrinquedo;
+
+
+    String dadosPessoa;
+    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +37,68 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        
+
         pessoa = new Pessoa();
+        //atribuir conteudo, dados, valores para o objeto
+        pessoa.setPrimeiroNome("Allan");
+        pessoa.setSobreNome("Brandl");
+        pessoa.setCursoDesejado("Androido");
+        pessoa.setTelefoneContato("979738336");
+
+
+        outraPessoa = new Pessoa();
+        outraPessoa.setPrimeiroNome("Daniele");
+        outraPessoa.setSobreNome("Brandl");
+        outraPessoa.setCursoDesejado("Apple");
+        outraPessoa.setTelefoneContato("981234564");
+
+        cidade = new Cidade();
+        cidade.setNomeCidade("São Paulo");
+        cidade.setEstadoCidade("São Paulo");
+        cidade.setPaisCidade("Brasil");
+
+        novaCidade = new Cidade();
+        novaCidade.setNomeCidade("Rio de Janeiro");
+        novaCidade.setEstadoCidade("Rio de Janeiro");
+        novaCidade.setPaisCidade("Brasil");
+
+
+        brinquedo = new Brinquedo();
+        brinquedo.setNomeBrinquedo("Bola");
+        brinquedo.setAnoBrinquedo("2023");
+        brinquedo.setPrecoBrinquedo("100,00");
+
+        novoBrinquedo = new Brinquedo();
+        novoBrinquedo.setNomeBrinquedo("Carrinho");
+        novoBrinquedo.setAnoBrinquedo("2025");
+        novoBrinquedo.setPrecoBrinquedo("150,00");
+
+//-------------------------------------------------------------------------------
+        //Utilizando os Gets
+
+
+        dadosPessoa = " Primeiro none: ";
+        dadosPessoa += pessoa.getPrimeiroNome() ;
+        dadosPessoa += " Sobrenome: ";
+        dadosPessoa += pessoa.getSobreNome();
+        dadosPessoa += " Curos desejado: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += " Telefone de contato: ";
+        dadosPessoa += pessoa.getTelefoneContato();
+
+        dadosOutraPessoa = " Primeiro none: ";
+        dadosOutraPessoa += outraPessoa.getPrimeiroNome() ;
+        dadosOutraPessoa += " Sobrenome: ";
+        dadosOutraPessoa += outraPessoa.getSobreNome();
+        dadosOutraPessoa += " Curos desejado: ";
+        dadosOutraPessoa +=outraPessoa.getCursoDesejado();
+        dadosOutraPessoa += " Telefone de contato: ";
+        dadosOutraPessoa += outraPessoa.getTelefoneContato();
+
+
+        int parada = 0;
+
+
     }
+
 }
