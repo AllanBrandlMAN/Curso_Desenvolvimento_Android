@@ -36,4 +36,14 @@ public class Brinquedo {
     }
 
     public Brinquedo(){}
+
+
+    @Override
+    public String toString() {
+        return "Brinquedo{" +
+                "nomeBrinquedo='" + nomeBrinquedo + '\'' +
+                ", anoBrinquedo='" + anoBrinquedo + '\'' +
+                ", precoBrinquedo='" + precoBrinquedo + '\'' +
+                '}';
+    }
 }

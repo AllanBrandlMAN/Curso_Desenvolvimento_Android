@@ -1,6 +1,7 @@
 package devandroid.brandl.applistacurso.view;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -96,9 +97,12 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
 
-        int parada = 0;
+        Log.i("POO Android","Objeto Pessoa: " +  pessoa.toString());
+        Log.i("POO Android", "Objeto outraPessoa: " +outraPessoa.toString());
 
+        Log.i("Informacao Cidade", cidade.toString());
 
+        Log.i("Informacao Brinquedos", brinquedo.toString());
     }
 
 }

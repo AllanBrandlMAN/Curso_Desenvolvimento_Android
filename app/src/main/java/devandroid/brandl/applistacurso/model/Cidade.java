@@ -1,5 +1,7 @@
 package devandroid.brandl.applistacurso.model;
 
+import android.util.Log;
+
 public class Cidade {
 
     private String nomeCidade;
@@ -34,4 +36,15 @@ public class Cidade {
     public void setPaisCidade(String paisCidade) {
         this.paisCidade = paisCidade;
     }
+
+    @Override
+    public String toString() {
+        return "Cidade{" +
+                "nomeCidade='" + nomeCidade + '\'' +
+                ", estadoCidade='" + estadoCidade + '\'' +
+                ", paisCidade='" + paisCidade + '\'' +
+                '}';
+    }
+
+
 }
