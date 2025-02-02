@@ -88,9 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
         cidade = new Cidade();
         cidade.setNomeCidade("São Paulo");
         cidade.setEstadoCidade("São Paulo");
@@ -115,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 //-------------------------------------------------------------------------------
         //Utilizando os Gets
 
-/*
+
         dadosPessoa = " Primeiro none: ";
         dadosPessoa += pessoa.getPrimeiroNome() ;
         dadosPessoa += " Sobrenome: ";
@@ -134,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += " Telefone de contato: ";
         dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
-*/
+
         Log.i("POO Android","Objeto Pessoa: " +  pessoa.toString());
         Log.i("POO Android", "Objeto outraPessoa: " +outraPessoa.toString());
 
