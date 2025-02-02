@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import devandroid.brandl.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    Pessoa pessoa ;
+    Pessoa pessoa;
     Pessoa outraPessoa;
     Cidade cidade;
     Cidade novaCidade;
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
-
 
 
     @Override
@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         editTelefoneContato = findViewById(R.id.TelefoneContato);
 
 
-
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
@@ -86,29 +85,43 @@ public class MainActivity extends AppCompatActivity {
         editNomeCurso.setText(outraPessoa.getCursoDesejado());
         editTelefoneContato.setText(outraPessoa.getTelefoneContato());
 
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editPrimeiroNome.setText("");
+                editSobreNomeAluno.setText("");
+                editNomeCurso.setText("");
+                editTelefoneContato.setText("");
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobreNome(editSobreNomeAluno.getText().toString());
+                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
+
+                Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
 
-        cidade = new Cidade();
-        cidade.setNomeCidade("São Paulo");
-        cidade.setEstadoCidade("São Paulo");
-        cidade.setPaisCidade("Brasil");
+            }
 
-        novaCidade = new Cidade();
-        novaCidade.setNomeCidade("Rio de Janeiro");
-        novaCidade.setEstadoCidade("Rio de Janeiro");
-        novaCidade.setPaisCidade("Brasil");
+        });
 
 
-        brinquedo = new Brinquedo();
-        brinquedo.setNomeBrinquedo("Bola");
-        brinquedo.setAnoBrinquedo("2023");
-        brinquedo.setPrecoBrinquedo("100,00");
 
-        novoBrinquedo = new Brinquedo();
-        novoBrinquedo.setNomeBrinquedo("Carrinho");
-        novoBrinquedo.setAnoBrinquedo("2025");
-        novoBrinquedo.setPrecoBrinquedo("150,00");
-
+/*
 //-------------------------------------------------------------------------------
         //Utilizando os Gets
 
@@ -131,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += " Telefone de contato: ";
         dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
-
-        Log.i("POO Android","Objeto Pessoa: " +  pessoa.toString());
-        Log.i("POO Android", "Objeto outraPessoa: " +outraPessoa.toString());
+*/
+        Log.i("POO Android", "Objeto Pessoa: " + pessoa.toString());
+        Log.i("POO Android", "Objeto outraPessoa: " + outraPessoa.toString());
 
         Log.i("Informacao Cidade", cidade.toString());
 
