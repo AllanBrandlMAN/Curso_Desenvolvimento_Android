@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,19 +14,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.brandl.applistacurso.R;
-import devandroid.brandl.applistacurso.model.Brinquedo;
-import devandroid.brandl.applistacurso.model.Cidade;
 import devandroid.brandl.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
     Pessoa outraPessoa;
-    Cidade cidade;
-    Cidade novaCidade;
-    Brinquedo brinquedo;
-    Brinquedo novoBrinquedo;
-
 
     String dadosPessoa;
     String dadosOutraPessoa;
@@ -148,9 +140,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("POO Android", "Objeto Pessoa: " + pessoa.toString());
         Log.i("POO Android", "Objeto outraPessoa: " + outraPessoa.toString());
 
-        Log.i("Informacao Cidade", cidade.toString());
 
-        Log.i("Informacao Brinquedos", brinquedo.toString());
     }
 
 }
