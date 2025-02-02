@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.035" />
 
-    <EditText android:id="@+id/editTextText"
+    <EditText android:id="@+id/PrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
@@ -33,18 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewApp" />
 
-    <EditText android:id="@+id/editTextText2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/text_hint_curdesejado"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
-
-    <EditText android:id="@+id/editTextText3"
+    <EditText android:id="@+id/SobreNomeAluno"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -53,9 +42,20 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/PrimeiroNome" />
 
-    <EditText android:id="@+id/editTextText4"
+    <EditText android:id="@+id/NomeCurso"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/text_hint_curdesejado"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SobreNomeAluno" />
+
+    <EditText android:id="@+id/TelefoneContato"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -65,34 +65,34 @@
         app:layout_constrainedWidth="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/NomeCurso" />
 
 
-    <Button android:id="@+id/button"
+    <Button android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="84dp"
         android:background="@color/black"
         android:text="@string/text_limpar"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato" />
 
-    <Button android:id="@+id/button2"
+    <Button android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginBottom="84dp"
         android:background="@color/black"
         android:text="@string/text_salvar"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintStart_toEndOf="@+id/btnLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato" />
 
-    <Button android:id="@+id/button3"
+    <Button android:id="@+id/btnFinalizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -101,6 +101,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,10 @@ package devandroid.brandl.applistacurso.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
     String dadosPessoa;
     String dadosOutraPessoa;
+
+
+    EditText editPrimeiroNome;
+    EditText editSobreNomeAluno;
+    EditText editNomeCurso;
+    EditText editTelefoneContato;
+
+    Button btnLimpar;
+    Button btnSalvar;
+    Button btnFinalizar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +69,28 @@ public class MainActivity extends AppCompatActivity {
         outraPessoa.setCursoDesejado("Apple");
         outraPessoa.setTelefoneContato("981234564");
 
+
+        editPrimeiroNome = findViewById(R.id.PrimeiroNome);
+        editSobreNomeAluno = findViewById(R.id.SobreNomeAluno);
+        editNomeCurso = findViewById(R.id.NomeCurso);
+        editTelefoneContato = findViewById(R.id.TelefoneContato);
+
+
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNomeAluno.setText(pessoa.getSobreNome());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneContato.setText(pessoa.getTelefoneContato());
+
+
+
+
+
+
         cidade = new Cidade();
         cidade.setNomeCidade("São Paulo");
         cidade.setEstadoCidade("São Paulo");
@@ -77,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 //-------------------------------------------------------------------------------
         //Utilizando os Gets
 
-
+/*
         dadosPessoa = " Primeiro none: ";
         dadosPessoa += pessoa.getPrimeiroNome() ;
         dadosPessoa += " Sobrenome: ";
@@ -96,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += " Telefone de contato: ";
         dadosOutraPessoa += outraPessoa.getTelefoneContato();
 
-
+*/
         Log.i("POO Android","Objeto Pessoa: " +  pessoa.toString());
         Log.i("POO Android", "Objeto outraPessoa: " +outraPessoa.toString());
 
