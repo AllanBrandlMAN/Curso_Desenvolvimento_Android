@@ -1,6 +1,8 @@
 package devandroid.brandl.applistacurso.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SharedMemory;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,15 +16,19 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.brandl.applistacurso.R;
+import devandroid.brandl.applistacurso.controller.PessoaController;
 import devandroid.brandl.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
+
+
+    PessoaController controller;
     Pessoa pessoa;
     Pessoa outraPessoa;
-
-    String dadosPessoa;
-    String dadosOutraPessoa;
 
 
     EditText editPrimeiroNome;
@@ -40,14 +46,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        SharedPreferences.Editor listaVip = preferences.edit();
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
+
+        controller = new PessoaController();
+        controller.toString();
+
+
 
 
         pessoa = new Pessoa();
+
+
+
+
         //atribuir conteudo, dados, valores para o objeto
         pessoa.setPrimeiroNome("Allan");
         pessoa.setSobreNome("Brandl");
@@ -107,36 +129,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
 
+                listaVip.putString("primeiro nome",pessoa.getPrimeiroNome());
+                listaVip.putString("sobrenome",pessoa.getSobreNome());
+                listaVip.putString("nome curso",pessoa.getCursoDesejado());
+                listaVip.putString("telefone contato",pessoa.getTelefoneContato());
+                listaVip.apply();
+
+                controller.salvar(pessoa);
             }
 
         });
 
 
 
-/*
-//-------------------------------------------------------------------------------
-        //Utilizando os Gets
-
-
-        dadosPessoa = " Primeiro none: ";
-        dadosPessoa += pessoa.getPrimeiroNome() ;
-        dadosPessoa += " Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += " Curos desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += " Telefone de contato: ";
-        dadosPessoa += pessoa.getTelefoneContato();
-
-        dadosOutraPessoa = " Primeiro none: ";
-        dadosOutraPessoa += outraPessoa.getPrimeiroNome() ;
-        dadosOutraPessoa += " Sobrenome: ";
-        dadosOutraPessoa += outraPessoa.getSobreNome();
-        dadosOutraPessoa += " Curos desejado: ";
-        dadosOutraPessoa +=outraPessoa.getCursoDesejado();
-        dadosOutraPessoa += " Telefone de contato: ";
-        dadosOutraPessoa += outraPessoa.getTelefoneContato();
-
-*/
         Log.i("POO Android", "Objeto Pessoa: " + pessoa.toString());
         Log.i("POO Android", "Objeto outraPessoa: " + outraPessoa.toString());
 
