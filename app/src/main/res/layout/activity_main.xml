@@ -67,6 +67,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NomeCurso" />
 
+    <TextView
+        android:id="@+id/textListaSpinner"
+        android:layout_width="295dp"
+        android:layout_height="47dp"
+        android:text="Selecione um Curso..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato"
+        app:layout_constraintVertical_bias="0.723" />
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="415dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato"
+        app:layout_constraintVertical_bias="0.33" />
+
 
     <Button
         android:id="@+id/btnLimpar"
@@ -109,30 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TelefoneContato"
         app:layout_constraintVertical_bias="0.894" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="415dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato"
-        app:layout_constraintVertical_bias="0.33" />
 
-    <TextView
-        android:id="@+id/textListaSpinner"
-        android:layout_width="295dp"
-        android:layout_height="47dp"
-        android:autoText="false"
-        android:text="Selecione um Curso..."
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TelefoneContato"
-        app:layout_constraintVertical_bias="0.723" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
