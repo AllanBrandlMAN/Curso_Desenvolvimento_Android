@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     PessoaController controller;
     CursoController cursoController;
     Pessoa pessoa;
-    List<Curso> listCursos;
+    List<String> nomesDosCursos;
+
 
 
     EditText editPrimeiroNome;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
+    //Spinner com letra maiuscula e classe e minuscula e objeto
+    Spinner spinner;
 
 
     @Override
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         cursoController = new CursoController();
-        listCursos = cursoController.getListaDeCursos();
+        nomesDosCursos = cursoController.dadosParaSpinner();
 
 
 
@@ -79,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         editSobreNomeAluno = findViewById(R.id.SobreNomeAluno);
         editNomeCurso = findViewById(R.id.NomeCurso);
         editTelefoneContato = findViewById(R.id.TelefoneContato);
+        spinner = findViewById(R.id.spinner);
+
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNomeAluno.setText(pessoa.getSobreNome());

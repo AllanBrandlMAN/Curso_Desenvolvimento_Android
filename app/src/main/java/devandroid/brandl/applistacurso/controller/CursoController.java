@@ -26,8 +26,10 @@ public class CursoController {
         return listCursos;
 
     }
-//codigo para criar um Spinner rapidamente
-    public ArrayList<String>dadosParaSpinner(){
+
+
+//codigo para criar um Spinner rapidamente (codigo para utilizar spinner)
+    public ArrayList<String> dadosParaSpinner() {
 
         ArrayList<String> dados = new ArrayList<String>();
 
@@ -38,6 +40,10 @@ public class CursoController {
 
         }
         return dados;
-
     }
+
 }
+
+
+
+
