@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         // adapter
         //layout precisamos de um layout para o spinner
         //injetar o adapter ao spinner - a lista sera gerada
