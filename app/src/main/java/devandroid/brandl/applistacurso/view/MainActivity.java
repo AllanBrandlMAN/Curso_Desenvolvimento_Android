@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.SharedMemory;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -67,12 +68,6 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
 
 
-        cursoController = new CursoController();
-        nomesDosCursos = cursoController.dadosParaSpinner();
-
-
-
-
         pessoa = new Pessoa();
         controller.buscar(pessoa);
 
@@ -83,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         editSobreNomeAluno = findViewById(R.id.SobreNomeAluno);
         editNomeCurso = findViewById(R.id.NomeCurso);
         editTelefoneContato = findViewById(R.id.TelefoneContato);
-        spinner = findViewById(R.id.spinner);
+
 
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
@@ -91,10 +86,27 @@ public class MainActivity extends AppCompatActivity {
         editNomeCurso.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
 
-
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
+
+
+
+        // adapter
+        //layout precisamos de um layout para o spinner
+        //injetar o adapter ao spinner - a lista sera gerada
+
+        cursoController = new CursoController();
+        nomesDosCursos = cursoController.dadosParaSpinner();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this,
+                android.R.layout.simple_list_item_1,
+                cursoController.dadosParaSpinner());
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
+        spinner = findViewById(R.id.spinner);
+
+
 
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
