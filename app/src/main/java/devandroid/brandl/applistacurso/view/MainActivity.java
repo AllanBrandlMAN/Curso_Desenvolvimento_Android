@@ -108,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
 
 
-
-
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
